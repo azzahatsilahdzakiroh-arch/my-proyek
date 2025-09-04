@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asam & Basa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Judul Halaman -->
+    <header id="header">
+        <div class="title-box">
+            <h1>Asam & Basa</h1>
+            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fid.gofreedownload.net%2Ffree-vector%2Fvector-icon%2Fchemistry-background-dark-design-lab-tools-formula-icons-251800%2F&psig=AOvVaw1fbMwZXQ5olnh539tCdBG8&ust=1757079337759000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNiJx-Ocv48DFQAAAAAdAAAAABAE" alt="Ornamen Kimia" class="ornament-bg">
+            <button onclick="scrollToSection('pengertian')">Explore</button>
+        </div>
+    </header>
+
+    <!-- Pengertian Asam Basa -->
+    <section id="pengertian">
+        <h2>Pengertian Asam & Basa</h2>
+        <div class="definition-box">
+            <p class="hint">Klik gambar</p>
+            <img src="molekul-kimia.jpg" alt="Molekul Kimia" onclick="toggleDefinisi()" class="molekul-img">
+            <div id="definisi-container" class="hidden">
+                <div class="box asam-box">
+                    <h3>Asam</h3>
+                    <p>Asam adalah zat yang melepaskan ion H⁺ dalam larutan dan memiliki pH < 7.</p>
+                </div>
+                <div class="box basa-box">
+                    <h3>Basa</h3>
+                    <p>Basa adalah zat yang melepaskan ion OH⁻ dalam larutan dan memiliki pH > 7.</p>
+                </div>
+            </div>
+            <div class="ph-capsule">pH < 7 = Asam | pH > 7 = Basa</div>
+        </div>
+    </section>
+
+    <!-- Contoh Asam Basa -->
+    <section id="contoh">
+        <h2>Contoh Asam & Basa</h2>
+        <div class="examples">
+            <div class="example">
+                <p class="hint">Klik gambar</p>
+                <img src="contoh-asam.jpg" alt="Contoh Asam" onclick="toggleContoh('asam')">
+                <div id="info-asam" class="hidden">
+                    <p>Cuka, lemon, asam sulfat (H₂SO₄), dll.</p>
+                </div>
+            </div>
+            <div class="example">
+                <p class="hint">Klik gambar</p>
+                <img src="contoh-basa.jpg" alt="Contoh Basa" onclick="toggleContoh('basa')">
+                <div id="info-basa" class="hidden">
+                    <p>Sabun, amonia (NH₃), natrium hidroksida (NaOH), dll.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skala pH -->
+    <section id="ph-skala">
+        <h2>Skala pH</h2>
+        <p class="hint">Klik angka</p>
+        <div class="ph-scale">
+            <!-- 1 to 14 -->
+            <div class="ph-item" onclick="showPhInfo(1)">1</div>
+            <div class="ph-item" onclick="showPhInfo(2)">2</div>
+            <div class="ph-item" onclick="showPhInfo(3)">3</div>
+            <div class="ph-item" onclick="showPhInfo(4)">4</div>
+            <div class="ph-item" onclick="showPhInfo(5)">5</div>
+            <div class="ph-item" onclick="showPhInfo(6)">6</div>
+            <div class="ph-item" onclick="showPhInfo(7)">7</div>
+            <div class="ph-item" onclick="showPhInfo(8)">8</div>
+            <div class="ph-item" onclick="showPhInfo(9)">9</div>
+            <div class="ph-item" onclick="showPhInfo(10)">10</div>
+            <div class="ph-item" onclick="showPhInfo(11)">11</div>
+            <div class="ph-item" onclick="showPhInfo(12)">12</div>
+            <div class="ph-item" onclick="showPhInfo(13)">13</div>
+            <div class="ph-item" onclick="showPhInfo(14)">14</div>
+        </div>
+        <div id="ph-info-box"></div>
+    </section>
+
+    <!-- Simulasi Indikator -->
+    <section id="simulasi">
+        <h2>Simulasi Indikator Alami</h2>
+        <div class="simulasi-container">
+
+            <!-- Bunga Sepatu -->
+            <div class="indikator-box">
+                <h3>Bunga Sepatu</h3>
+                <p class="hint">Geser skala</p>
+                <input type="range" min="1" max="14" value="7" oninput="updateIndikator('sepatu', this.value)">
+                <div class="color-box" id="sepatu-color"></div>
+                <p id="sepatu-info"></p>
+            </div>
+
+            <!-- Daun Pacar -->
+            <div class="indikator-box">
+                <h3>Daun Pacar</h3>
+                <p class="hint">Geser skala</p>
+                <input type="range" min="1" max="14" value="7" oninput="updateIndikator('pacar', this.value)">
+                <div class="color-box" id="pacar-color"></div>
+                <p id="pacar-info"></p>
+            </div>
+
+            <!-- Bugenvil -->
+            <div class="indikator-box">
+                <h3>Bugenvil</h3>
+                <p class="hint">Geser skala</p>
+                <input type="range" min="1" max="14" value="7" oninput="updateIndikator('bugenvil', this.value)">
+                <div class="color-box" id="bugenvil-color"></div>
+                <p id="bugenvil-info"></p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Informasi Website -->
+    <footer>
+        <div class="footer-content">
+            <div class="left">
+                <h3>Informasi Kelompok</h3>
+                <p>SMA Negeri 1 Pangkalpinang<br>
+                Kelas XII C1<br>
+                Kelompok 6<br>
+                Tahun Ajaran 2025/2026</p>
+                <p><strong>Nama anggota:</strong><br>
+                Azzah Atsilah<br>
+                Mutia Syahri Ramadhani<br>
+                R. Muhammad Nursandi P<br>
+                Ravaila Habba Tifany<br>
+                Rizqi Muzammil</p>
+            </div>
+            <div class="right">
+                <h3>Tentang Website</h3>
+                <p>Platform pembelajaran interaktif untuk memahami konsep asam dan basa dalam kimia.</p>
+                <ul>
+                    <li>Pengertian Asam Basa</li>
+                    <li>Contoh Asam Basa</li>
+                    <li>Skala pH</li>
+                    <li>Simulasi Indikator Alami</li>
+                </ul>
+                <p><strong>Kontak:</strong></p>
+                <ul>
+                    <li>Azzah - azzah.atsilah50@sma.belajar.id - +62 82374792087</li>
+                    <li>Tyo - r.muhammad2147@sma.belajar.id - +62 81279975423</li>
+                    <li>Mutia - mutia.syahri18@sma.belajar.id - +62 85783036895</li>
+                    <li>Raivaila - ravaila.habba36@sma.belajar.id - +62 88286444811</li>
+                    <li>Iky - rizqi.muzzammil24@sma.belajar.id - +62 88286547724</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
